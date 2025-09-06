@@ -3,7 +3,12 @@ import flower1 from "../assets/flower1.png";
 import flower2 from "../assets/flower2.png";
 import flower3 from "../assets/flower3.png";
 import flower4 from "../assets/flower4.png";
-import image from "../assets/image.png"; // your image
+import flower5 from "../assets/flower5.png"
+import flower6 from "../assets/flower6.png"
+import flower7 from "../assets/flower7.png"
+import flower8 from "../assets/flower8.png"
+import flower9 from "../assets/flower9.png"
+import image from "../assets/image.png";
 
 const StarsBackground: React.FC = () => {
   const numStars = 100;
@@ -25,19 +30,28 @@ const StarsBackground: React.FC = () => {
   const [showBouquetText, setShowBouquetText] = useState(false);
   const [showImage, setShowImage] = useState(false);
 
-  const message = "Haina Hola";
-  const flowers = [flower1, flower2, flower3, flower4, flower1, flower2, flower3, flower4];
+  
 
-  const bouquetOffsets = [
-    { x: -120, y: -40, rotate: "-35deg" },
-    { x: -80, y: -30, rotate: "-25deg" },
-    { x: -50, y: -20, rotate: "-15deg" },
-    { x: -20, y: -10, rotate: "-5deg" },
-    { x: 20, y: -10, rotate: "5deg" },
-    { x: 50, y: -20, rotate: "15deg" },
-    { x: 80, y: -30, rotate: "25deg" },
-    { x: 120, y: -40, rotate: "35deg" },
-  ];
+  const message = "Khai Khai herum ta";
+  const flowers = [
+  flower1, flower6, 
+  flower3, flower8, flower9,
+  flower2, flower7, flower3,
+  flower4, flower5,
+];
+
+const bouquetOffsets = [
+  { x: -140, y: -50, rotate: "-40deg" },
+  { x: -100, y: -40, rotate: "-30deg" },
+  { x: -65, y: -30, rotate: "-20deg" },
+  { x: -30, y: -50, rotate: "-10deg" },
+  { x: 10, y: -90, rotate: "0deg" },
+  { x: 30, y: -15, rotate: "10deg" },
+  { x: 65, y: -30, rotate: "20deg" },
+  { x: 70, y: -50, rotate: "20deg" },
+  { x: 100, y: -40, rotate: "25deg" },
+  { x: 140, y: -50, rotate: "40deg" },
+];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -205,12 +219,15 @@ const StarsBackground: React.FC = () => {
               ? `translateX(calc(-50% + ${bouquetOffsets[i].x}px)) translateY(${bouquetOffsets[i].y}px) rotate(${bouquetOffsets[i].rotate}) scale(1)`
               : `translateX(-50%) translateY(0) rotate(0deg) scale(0.6)`,
             transitionDelay: `${i * 250}ms`,
+
+            // 🌸 pastel + glow effect
             filter: `
-              grayscale(100%) 
-              brightness(1.2) 
-              contrast(1.2) 
-              drop-shadow(0 0 10px rgba(255,255,255,0.4))
-            `,
+        brightness(1.3)
+        saturate(0.8)
+        contrast(1.05)
+        drop-shadow(0 0 10px rgba(255,255,255,0.7))
+        drop-shadow(0 0 25px rgba(255,200,255,0.5))
+      `,
           }}
         />
       ))}
