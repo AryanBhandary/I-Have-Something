@@ -32,7 +32,7 @@ const StarsBackground: React.FC = () => {
 
   
 
-  const message = "Khai Khai herum ta";
+  const message = "Cheese";
   const flowers = [
   flower1, flower6, 
   flower3, flower8, flower9,
@@ -69,7 +69,6 @@ const bouquetOffsets = [
   const handleClick = () => {
     setClicked(true);
 
-    // Particle explosion
     const numParticles = 100;
     const newParticles = Array.from({ length: numParticles }).map(() => ({
       x: 50,
@@ -86,15 +85,13 @@ const bouquetOffsets = [
       setParticles((prev) => prev.map((p) => ({ ...p, active: true })));
     }, 50);
 
-    // Animate flowers and text together
     setTimeout(() => {
       setAnimateFlowers(true);
       setShowBouquetText(true);
 
-      // Fade in image after flowers/text animation
       setTimeout(() => {
         setShowImage(true);
-      }, 500); // adjust timing if needed
+      }, 500); 
     }, 1500);
   };
 
@@ -147,7 +144,7 @@ const bouquetOffsets = [
                transition-all duration-500
                hover:shadow-[0_0_40px_rgba(255,255,255,0.6),0_0_80px_rgba(255,255,255,0.3)]
                hover:scale-105
-               z-50" // <-- add this
+               z-50"
         >
           Click Me
         </button>
@@ -220,7 +217,6 @@ const bouquetOffsets = [
               : `translateX(-50%) translateY(0) rotate(0deg) scale(0.6)`,
             transitionDelay: `${i * 250}ms`,
 
-            // 🌸 pastel + glow effect
             filter: `
         brightness(1.3)
         saturate(0.8)
@@ -239,7 +235,7 @@ const bouquetOffsets = [
         className="absolute left-1/2 top-[30%] w-54 md:w-70 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-[4000ms]"
         style={{
           opacity: showImage ? 1 : 0,
-          mixBlendMode: "screen", // blends nicely with dark background and stars
+          mixBlendMode: "screen",
         }}
       />
 
