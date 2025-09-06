@@ -219,7 +219,7 @@ const StarsBackground: React.FC = () => {
       <img
         src={image}
         alt="special"
-        className="absolute left-1/2 top-[35%] w-54 md:w-70 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-[4000ms]"
+        className="absolute left-1/2 top-[30%] w-54 md:w-70 transform -translate-x-1/2 -translate-y-1/2 transition-opacity duration-[4000ms]"
         style={{
           opacity: showImage ? 1 : 0,
           mixBlendMode: "screen", // blends nicely with dark background and stars
